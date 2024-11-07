@@ -5,7 +5,7 @@ import base64
 # Generate a new EC private key
 private_key = ec.generate_private_key(ec.SECP256R1())
 
-# Export the private key in base64url format
+# Export the private key in base64 format
 vapid_private_key = base64.urlsafe_b64encode(
     private_key.private_numbers().private_value.to_bytes(32, 'big')
 ).rstrip(b'=').decode('utf-8')
